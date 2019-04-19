@@ -1,0 +1,12 @@
+<table class="table">
+<thead>
+
+</thead>
+<tbody>
+<tr *ngFor="let hero of weatherDataArray">
+    <th scope="row"> {{  getDayOfWeek(hero.date)}}</th>
+    <th scope="row"> <img [src]="hero.day.condition.icon" /></th>
+    <th scope="row">{{hero.day.maxtemp_c}}&#8451;<br>{{hero.day.mintemp_c}}&#8451;</th>
+  </tr>
+  </tbody>
+  </table>

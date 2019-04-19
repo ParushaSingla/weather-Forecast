@@ -1,0 +1,33 @@
+<table class="table">
+<thead>
+<tr>
+    <th scope="col">
+      <p class="text-center"><b>
+          <h2>
+            {{this.weatherData?.location.name }}, {{
+       this.weatherData?.location.country }}. </h2><br>
+          {{ this.weatherData?.current.condition.text
+}}<br>
+          {{ this.weatherData?.current.temp_f }}&#8457;<br>
+          {{ this.weatherData?.forecast.forecastday[0].date|date:'fullDate'}}<br>
+          <img *ngIf="this.weatherData" [src]="this.weatherData?.forecast.forecastday[0].day.condition.icon" />
+          <!-- {{  getDayOfWeek(this.weatherData?.forecast.forecastday[0].date)}} -->
+        </b></p>
+    </th>
+    <th scope="col">
+      <p class="text-center"><b>
+          pressure: {{ this.weatherData?.current.pressure_in
+          }}</b><br>
+         <b> humidity: </b> {{ this.weatherData?.current.humidity
+}}<br>
+         <b> wind:</b>{{ this.weatherData?.current.wind_mph
+          }} mph {{ this.weatherData?.current.wind_dir
+          }}<br>
+         <b>gust: {{ this.weatherData?.current.gust_mph
+          }} mph<br>
+        </b> </p>
+    </th>
+
+  </tr>
+</thead>
+</table>
